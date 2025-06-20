@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+</head>
+<body>
+    <h1>Search Products</h1>
+    <form method="post" style="padding-bottom: 10px;">
+        <input type="text" name="query" placeholder="Search..." value="{{ query or '' }}">
+        <input type="submit" value="Search">
+    </form>
+    <hr>
+    <h2>Results:</h2>
+    <ul>
+    {% for item in tables %}
+        <li><strong>{{ item.Title }}</strong> | {{ item.Price }} | ⭐ {{ item.Rating }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Visualizations</h2>
+    <img src="/static/plots/price_distribution.png" width="400">
+    <img src="/static/plots/rating_count.png" width="400">
+    <img src="/static/plots/avg_price_by_rating.png" width="400">
+    <img src="/static/plots/boxplot_price_rating.png" width="400">
+    <img src="/static/plots/top10_expensive_books.png" width="400">
+</body>
+<footer>
+    <hr>
+    <p style="text-align: center;">&copy; 2025 Product Search Application</p>
+    <p style="text-align: center;">Developed by @suraj_nate</p> 
+</footer>
+</html>
